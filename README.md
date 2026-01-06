@@ -1,6 +1,6 @@
 # 👑 Welcome to the RoyalMD
 
-**RoyalMD** is a lightweight, educational molecular dynamics pipeline built on **OpenMM**, designed to run protein simulations on portable hardware. It automates common MD setup steps—from PDB fixing to solvation, minimization, and production dynamics—using a single command-line interface. The current demo version allows running molecular dynamics of any molecular system composed of proteins and nucleic acids with a single command.
+**RoyalMD** is a lightweight, educational molecular dynamics pipeline built on **OpenMM**, designed to run protein simulations on portable hardware. It automates common MD setup steps—from PDB fixing to solvation, minimization, and production dynamics, using a single command-line interface. The current demo version allows running molecular dynamics of any molecular system composed of proteins and nucleic acids.
 
 ---
 

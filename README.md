@@ -12,7 +12,6 @@ python ./RoyalMD_beta.py ./test_systems/short_and_flexible.pdb
 
 This script was developed and benchmarked by **Gleb Novikov**
 
----
 
 ## ✨ Features
 - Automatic **PDB fixing** (missing atoms, residues, protonation via `pdbfixer`)

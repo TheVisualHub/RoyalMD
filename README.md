@@ -8,7 +8,7 @@ python ./RoyalMD.py ./test_systems/short_and_flexible.pdb
 ```
 
 ## 🔭 Overview 
-**RoyalMD** is a lightweight, educational molecular dynamics pipeline built on **OpenMM**, designed to run protein simulations on portable hardware. It automates on the fly common MD setup steps: from PDB fixing to solvation, minimization, and production runs, using a single command-line interface. The current beta version allows running molecular dynamics of any molecular system composed of proteins, nucleic acids and their complexes. It automatically detects your hardware and uses GPU if available.
+**RoyalMD** is a lightweight, educational molecular dynamics pipeline built on **OpenMM**, designed to run protein simulations on portable hardware. It automates on the fly common MD setup steps: from PDB fixing to solvation, minimization, multi-step equilibration and production runs, with a single command-line interface. The current version allows running molecular dynamics of any molecular system composed of proteins, nucleic acids and their complexes. It automatically detects your hardware and uses GPU if available.
 
 
 ## 👤 Author

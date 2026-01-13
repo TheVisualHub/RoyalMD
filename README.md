@@ -48,33 +48,52 @@ python ./RoyalMD.py ./test_systems/short_and_flexible.pdb
 # Protein-Nucleic Acid complex (RNase H, PDB: 2QKB):
 python ./RoyalMD.py ./test_systems/DNA_RNA_prot.pdb
 
+# Nucleosome (Histone octamer core wrapped by DNA, PDB: 1KX5):
+python ./RoyalMD.py ./test_systems/nucleosome.pdb
+
 # Large System (500K atoms): Immunoglobulin (PDB: 1IGT):
 python ./RoyalMD.py ./test_systems/antibody.pdb
 ```
 
 ## ⚙️ Configuration
 
-Customize all variables in the MAIN function of the script.
+Customize these variables in the MAIN function of the script.
 
 ```bash
  # --- CONFIGURATION ---
-input_pdb = sys.argv[1]  # use pdb file directly from terminal
-pre_sim_pdb = 'solvated.pdb'  # name of the solvated system for visualization
-output_nc = 'production.nc'  # trajectory file generated during the simulation
-timestep = 0.002  # integration timestep (in ps)
-total_steps = 500000  # total number of steps (1 ns of production run; increase for longer simulations)
-report_interval = 1500  # interval for saving snapshots in the trajectory
-ligands_to_remove = ['SO4','EDO', 'LIG', 'LIH', 'lig', 'lih']  # small molecules to filter out from input PDB
-temperature = 300  # temperature for Langevin dynamics (K)
-pressure = 1.0  # pressure for Monte Carlo barostat (atm)
-box_type = 'dodecahedron'  # type of simulation box
-box_padding = 1.0  # solvent buffer around the system (nm); increase to 1.2–1.5 nm if kin. energy fluctuates
-ionic_strength = 0.15  # salt concentration (M)
-env_pH = 7.0  # pH for protonation during system preparation
-ff_protein = 'amber14'  # force field for protein
-ff_water = 'tip3p'  # force field for water
-log_freq = 1  # frequency of log output during the production run
+ input_pdb = sys.argv[1]
+    pre_sim_pdb = 'solvated.pdb'
+    output_nc = 'production.nc'
+    timestep = 0.002
+    equil_time = 200 # 200ps of NPT equilibration (after 100ps of heating)
+    production_time = 1000 # 1 ns of production
+    report_interval = 1500 # report info every 1500 steps
+    log_freq = 10
+    # conditions
+    temperature = 310 
+    pressure = 1.0 
+    # box and solvation: dodecahedron or octahedron
+    box_type = 'dodecahedron'
+    box_padding = 1.0 # if temperature fluctuates (with very flexible systems), increase it to 1.5
+    ionic_strength = 0.15
+    env_pH = 7.0
+    # main params
+    ff_protein = 'amber14' # NB: use amber14 with tip3p water
+    ff_water = 'tip3p' # tip3p - with amber14/ amber99; opc - with amber19; water - with charmm36
+    ligands_to_remove = ['SO4','HOH', 'EDO', 'LIH', 'LIG'] # .. add more from your PDBs
 
 ```
-```
 
+## 🌀 Supported force fields and water models
+
+```bash
+Customize these variables in the MAIN function of the script.
+  ff_map = {
+        'amber19': 'amber19-all.xml', # with OPC water
+        'amber14': 'amber14-all.xml', # with TIP3P water
+        'amber99sb': 'amber99sb.xml', # with TIP3P water
+        'amber99sbildn': 'amber99sbildn.xml', # with TIP3P water
+        'amber03': 'amber03.xml', # with TIP3P water
+        'charmm36': 'charmm36.xml' # with "water" water ;-)
+    }
+```

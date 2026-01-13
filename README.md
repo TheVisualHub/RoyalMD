@@ -18,11 +18,12 @@ This script was developed and benchmarked by **Gleb Novikov**
 
 ## ✨ Features
 - Automatic **PDB fixing** (missing atoms, residues, protonation via `pdbfixer`)
-- Flexible **force field selection** for protein & water models (AMBER, CHARMM)
+- Flexible **force field selection** for protein & water models (AMBER, CHARMM36)
 - **Solvation and ion placement** with configurable box geometry
-- Energy **minimization** and **NPT production runs**
-- Flexible trajectory output and logging for benchmarks
-- Designed for **Mac/Linux**
+- Support for three-site (TIP3P) and four-site water models
+- Energy **minimization** and multi-step **NPT equilibration**
+- Production MD runs with benchmark-ready logging
+- Cross-platform optimization with GPU detection
 
 ---
 

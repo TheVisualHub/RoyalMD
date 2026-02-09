@@ -52,7 +52,11 @@ python ./RoyalMD.py ./test_systems/DNA_RNA_prot.pdb
 # Nucleosome (Histone octamer core wrapped by DNA, PDB: 1KX5):
 python ./RoyalMD.py ./test_systems/nucleosome.pdb
 
-# Large System (500K atoms): Immunoglobulin (PDB: 1IGT):
+# BIG SYSTEMS --> protein-protein complexes:
+# MraZ octamer bound to a DNA promoter (PDB: 9SX6):
+python ./RoyalMD.py ./test_systems/MraZ_DNA.pdb
+
+# Immunoglobulin (PDB: 1IGT):
 python ./RoyalMD.py ./test_systems/antibody.pdb
 ```
 

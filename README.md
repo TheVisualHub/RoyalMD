@@ -46,6 +46,9 @@ conda install -c conda-forge "numpy<2.0" # <<< if you have any numpy-related err
 # Short peptide devived from 3CL protease (PDB: 6LU7):
 python ./RoyalMD.py ./test_systems/short_and_flexible.pdb
 
+# Open-state calmodulin bound to 4 calcium ions (PDB: 1CLL):
+python ./RoyalMD.py ./test_systems/calmodulin_open.pdb
+
 # Protein-Nucleic Acid complex (RNase H, PDB: 2QKB):
 python ./RoyalMD.py ./test_systems/DNA_RNA_prot.pdb
 
